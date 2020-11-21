@@ -1,5 +1,12 @@
 #!groovy
 
+@Library('jenkinsLib@master')_
+
+def build = new org.devops.build()
+
+String type = ${env.type}
+String command = ${env.command}
+
 pipeline{
   agent any
   
@@ -7,8 +14,9 @@ pipeline{
     stage("maven build"){
       steps{
         script{
-          mvn = tool "Maven"
-          sh "${mvn}/bin/mvn -v"
+          //mvn = tool "Maven"
+          //sh "${mvn}/bin/mvn -v"
+          build.Build(type, command)
         }
       }
     }
