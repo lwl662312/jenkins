@@ -4,8 +4,8 @@
 
 def build = new org.devops.build()
 
-String type = ${env.type}
-String command = ${env.command}
+String type = "${env.type}"
+String command = "${env.command}"
 
 pipeline{
   agent any
