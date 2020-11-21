@@ -1,0 +1,12 @@
+pipeline{
+  node any
+  
+  stages{
+    stage{
+      script{
+        mvn = tool "Maven"
+        sh "${mvn/bin/mvn} -v"
+      }
+    }
+  }
+}
