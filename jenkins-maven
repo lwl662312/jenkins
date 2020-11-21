@@ -1,3 +1,5 @@
+#!groovy
+
 pipeline{
   node any
   
@@ -5,7 +7,7 @@ pipeline{
     stage{
       script{
         mvn = tool "Maven"
-        sh "${mvn/bin/mvn} -v"
+        sh "${mvn}/bin/mvn -v"
       }
     }
   }
